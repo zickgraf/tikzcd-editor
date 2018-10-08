@@ -214,6 +214,13 @@ export default class App extends Component {
     this.setState({
       codeValue: evt.currentTarget.value
     })
+
+    let self = this
+    window.setTimeout(function() {
+      self.disableCodeGeneration = true
+      self.handleParseCode()
+      self.disableCodeGeneration = false
+    })
   }
 
   handleParseCode = () => {
@@ -286,6 +293,10 @@ export default class App extends Component {
           }
         : {})
     }))
+
+    if (!this.disableCodeGeneration) {
+      window.setTimeout(this.openCodeBox)
+    }
   }
 
   handleCellClick = evt => {

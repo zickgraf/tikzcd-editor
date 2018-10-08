@@ -359,3 +359,34 @@ a, img {
   .code-box .buttons li.separator {
     flex: 1;
 }
+
+
+
+#modal-overlay {
+	visibility: visible;
+	justify-content: right;
+	pointer-events: none;
+	background: none !important;
+}
+
+#modal-overlay .modal-box {
+	width: 50%;
+	height: 100%;
+	padding: 0 !important;
+	opacity: 1;
+	transform: none;
+	pointer-events: all;
+}
+
+#modal-overlay .modal-box textarea {
+	width: 100%;
+	height: 100%
+}
+
+#modal-overlay .modal-box .buttons {
+	display: none;
+}
+
+.properties, .toolbox {
+	z-index: 100;
+}
